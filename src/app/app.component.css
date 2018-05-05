@@ -1,0 +1,27 @@
+h1 {
+    font-family: fantasy;
+    text-align: center;
+    font-size: 80px;
+    color: white;
+}
+
+a:link {
+    text-decoration: none;
+    color: blueviolet;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a {
+    font-family: Arial;
+    font-size: 30px;
+    margin-left: 50px;
+    margin-right: 50px;
+    color:aliceblue;
+}

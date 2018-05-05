@@ -1,0 +1,17 @@
+#vis {
+    width: 1500;
+    height: 400;
+    padding: 40px;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+#vis1 {
+    width:2000px;
+}
+
+.show-img {
+    height: 390px;
+    width: 300px;
+    margin-right: 10px;
+}
