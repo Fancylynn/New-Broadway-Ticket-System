@@ -14,4 +14,10 @@
     height: 390px;
     width: 300px;
     margin-right: 10px;
+    cursor: pointer;
+    filter: brightness(50%);
+}
+
+.selected {
+  filter: brightness(100%) !important;
 }

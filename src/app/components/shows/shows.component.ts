@@ -13,12 +13,19 @@ export class ShowsComponent implements OnInit {
 
   shows: Show[];
 
+  hoverShow: Show;
+
   ngOnInit() {
     this.getShows();
   }
 
   getShows(): void {
     this.shows = this.showService.getShows();
+  }
+
+  onHover(show: Show): void {
+    this.hoverShow = show;
+    console.log(show.name);
   }
 
 }

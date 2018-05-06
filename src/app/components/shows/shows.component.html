@@ -1,5 +1,12 @@
 <div id="vis">
     <div id="vis1">
-        <img *ngFor="let show of shows" class="show-img" src={{show.src}} alt={{show.name}}/>
+        <img 
+            *ngFor="let show of shows"
+            [class.selected]="show === hoverShow"
+            (mouseover)="onHover(show)"
+            class="show-img" 
+            src={{show.src}} 
+            alt={{show.name}}
+            />
     </div>
 </div>
