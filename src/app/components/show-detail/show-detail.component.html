@@ -9,10 +9,20 @@
   <h3>BRIEF INTRODUCTION</h3>
   <p>{{data.content}}</p>
 </mat-dialog-content>
+<mat-dialog-content>
+    <h3>EXICTING MOMENTS</h3>
+    <div class="sliders-container">
+        <img *ngFor="let img of data.moments" src={{img}} alt="close-tag" />
+    </div>
+    
+  </mat-dialog-content>
 <mat-dialog-actions>
-  <button mat-button mat-dialog-close>
-    <a class="ticket-order" routerLink = "/order">Tickets Order</a>
-  </button>
+  <div class="button-container">
+      <button mat-button mat-dialog-close>
+          <a class="ticket-order" routerLink = "/order">Tickets Order</a>
+      </button>
+  </div>
+  
   <!-- <button mat-button mat-dialog-close>Order Tickets</button> -->
   <!-- <button mat-button [mat-dialog-close]="true" cdkFocusInitial>Install</button> -->
 </mat-dialog-actions>

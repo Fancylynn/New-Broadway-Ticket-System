@@ -3,4 +3,5 @@ export class Show {
   name: string;
   src: string;
   content: string;
+  moments: Array<string>;
 }

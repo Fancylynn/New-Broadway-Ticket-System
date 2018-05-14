@@ -2,15 +2,50 @@
     font-size: 40px;
 }
 
-.ticket-order {
-    text-decoration: none;
-    cursor: pointer;
-}
-
 .close-container {
     float: right;
     margin-right: 10px;
 }
+
 .close-button {
     border:none;
 }
+
+.sliders-container {
+    display: flex;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.sliders-container img{
+    width: 30%;
+    height: 30%;
+    margin-right: 5%;
+}
+
+.button-container {
+    text-align: center;
+    margin-top: 3%;
+    margin-bottom: 3%;
+    width: 100%;
+    height: 40%;
+}
+
+.button-container button {
+    width: 40%;
+    height: 20%;
+    background-color: lightcoral;
+    border-radius: 5px;
+    
+}
+
+.ticket-order {
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 25px;
+    font-weight: bold;
+    color: white;
+
+}
+
+

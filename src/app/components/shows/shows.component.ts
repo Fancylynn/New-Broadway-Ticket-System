@@ -36,7 +36,8 @@ export class ShowsComponent implements OnInit {
         height: '500px', 
         data: {
           header: this.hoverShow.name,
-          content: this.hoverShow.content
+          content: this.hoverShow.content,
+          moments: this.hoverShow.moments
         }
       });
     // dialogRef.afterClose().subsribe(result = > {console.log('abc');})
