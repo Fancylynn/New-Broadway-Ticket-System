@@ -1,0 +1,16 @@
+.header {
+    font-size: 40px;
+}
+
+.ticket-order {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.close-container {
+    float: right;
+    margin-right: 10px;
+}
+.close-button {
+    border:none;
+}
