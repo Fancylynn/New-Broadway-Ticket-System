@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Show } from '../../models/show';
 import { ShowService } from '../../services/show.service';
+import { MatDialog } from '@angular/material';
+import { ShowDetailComponent } from '../show-detail/show-detail.component';
 
 @Component({
   selector: 'app-shows',
@@ -9,7 +11,7 @@ import { ShowService } from '../../services/show.service';
 })
 export class ShowsComponent implements OnInit {
 
-  constructor(private showService: ShowService) { }
+  constructor(private showService: ShowService, public dialog: MatDialog) { }
 
   shows: Show[];
 
@@ -28,4 +30,12 @@ export class ShowsComponent implements OnInit {
     console.log(show.name);
   }
 
+  openShowDetail() {
+    const dialogRef = this.dialog.open(ShowDetailComponent, {height: '500px', data: {header: this.hoverShow.name}});
+    // dialogRef.afterClose().subsribe(result = > {console.log('abc');})
+  }
+
 }
+
+
+

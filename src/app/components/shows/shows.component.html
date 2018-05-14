@@ -4,6 +4,7 @@
             *ngFor="let show of shows"
             [class.selected]="show === hoverShow"
             (mouseover)="onHover(show)"
+            (click)="openShowDetail()"
             class="show-img" 
             src={{show.src}} 
             alt={{show.name}}
