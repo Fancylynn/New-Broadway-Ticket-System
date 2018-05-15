@@ -11,10 +11,15 @@
     border:none;
 }
 
+.content-container {
+    overflow: hidden;
+}
+
 .sliders-container {
     display: flex;
     margin-left: 5%;
     margin-right: 5%;
+    overflow: hidden;
 }
 
 .sliders-container img{

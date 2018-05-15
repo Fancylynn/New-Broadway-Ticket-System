@@ -9,13 +9,12 @@
   <h3>BRIEF INTRODUCTION</h3>
   <p>{{data.content}}</p>
 </mat-dialog-content>
-<mat-dialog-content>
+<mat-dialog-content class="content-container">
     <h3>EXICTING MOMENTS</h3>
     <div class="sliders-container">
         <img *ngFor="let img of data.moments" src={{img}} alt="close-tag" />
-    </div>
-    
-  </mat-dialog-content>
+    </div>  
+</mat-dialog-content>
 <mat-dialog-actions>
   <div class="button-container">
       <button mat-button mat-dialog-close>

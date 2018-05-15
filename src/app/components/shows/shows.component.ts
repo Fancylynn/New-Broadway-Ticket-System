@@ -33,7 +33,7 @@ export class ShowsComponent implements OnInit {
   openShowDetail() {
     const dialogRef = this.dialog.open(ShowDetailComponent, 
       {
-        height: '500px', 
+        height: '600px', 
         data: {
           header: this.hoverShow.name,
           content: this.hoverShow.content,

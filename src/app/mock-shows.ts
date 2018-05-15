@@ -15,7 +15,11 @@ export const SHOWS: Show[] = [
     name: 'Wicked', 
     src: '../../assets/picture/wicked.jpg',
     content: 'Wicked, the Broadway sensation, looks at what happened in the Land of Oz…but from a different angle. Long before Dorothy arrives, there is another girl, born with emerald-green skin—smart, fiery, misunderstood, and possessing an extraordinary talent. When she meets a bubbly blonde who is exceptionally popular, their initial rivalry turns into the unlikeliest of friendships…until the world decides to call one “good,” and the other one “wicked.” With a thrilling score that includes the hits “Defying Gravity,” “Popular” and “For Good,” Wicked has been hailed by The New York Times as “the defining musical of the decade.” Time Magazine cheers, “if every musical had the brain, the heart, and the courage of Wicked, Broadway really would be a magical place.” The Gershwin Theatre on 50th Street and Broadway is that magical place. From the first electrifying note to the final breathtaking moment, Wicked—the untold true story of the Witches of Oz—transfixes audiences with its wildly inventive story. It will send your spirits soaring to heights you’ll never forget.',
-    moments: ['../']
+    moments: [
+      '../../assets/picture/wicked-1.jpg',
+      '../../assets/picture/wicked-2.jpg',
+      '../../assets/picture/wicked-3.jpg'
+    ]
    },
   { id: 3, 
     name: 'The Phantom of the Opera', 
