@@ -25,24 +25,40 @@ export const SHOWS: Show[] = [
     name: 'The Phantom of the Opera', 
     src: '../../assets/picture/The_Phantom_of_the_opera.jpg',
     content: 'Based on the 1910 horror novel by Gaston Leroux, which has been adapted into countless films, The Phantom of the Opera follows a deformed composer who haunts the grand Paris Opera House. Sheltered from the outside world in an underground cavern, the lonely, romantic man tutors and composes operas for Christine, a gorgeous young soprano star-to-be. As Christine’s star rises, and a handsome suitor from her past enters the picture, the Phantom grows mad, terrorizing the opera house owners and company with his murderous ways. Still, Christine finds herself drawn to the mystery man. Audiences agree—The Phantom of the Opera is Broadway’s longest-running hit. Ever.',
-    moments: ['../']
+    moments: [
+      '../../assets/picture/phantom-1.jpg',
+      '../../assets/picture/phantom-2.jpg',
+      '../../assets/picture/phantom-3.jpg'
+    ]
    },
   { id: 4, 
     name: 'The Book of Morman', 
     src: '../../assets/picture/The-Book-of-Morman.jpg',
     content: 'The Book of Mormon follows two young missionaries who are sent to Uganda to try to convert citizens to the Mormon religion. One missionary, Elder Price, is an enthusiastic go-getter with a strong dedication to his faith, while his partner, Elder Cunningham, is a socially awkward but well meaning nerd whose tendency to embroider the truth soon lands him in trouble. Upon their arrival in Africa, Elders Price and Cunningham learn that in a society plagued by AIDS, poverty and violence, a successful mission may not be as easy as they expected.',
-    moments: ['../','..']
+    moments: [
+      '../../assets/picture/morman-1.jpg',
+      '../../assets/picture/morman-2.jpg',
+      '../../assets/picture/morman-3.jpg'
+    ]
   },
   { id: 5, 
     name: 'Aladdin', 
     src: '../../assets/picture/Aladdin.jpg',
     content: 'In the middle-eastern town of Agrabah, Princess Jasmine is feeling hemmed in by her father’s desire to find her a royal groom. Meanwhile, the Sultan’s right-hand man, Jafar, is plotting to take over the throne. When Jasmine sneaks out of the palace incognito, she forms an instant connection with Aladdin, a charming street urchin and reformed thief. After being discovered together, Aladdin is sentenced to death, but Jafar saves him by ordering him to fetch a lamp from the Cave of Wonders. Where there’s a lamp, there’s a Genie, and once Aladdin unwittingly lets this one out, anything can happen! Will Aladdin’s new identity as “Prince Ali” help him win Jasmine’s heart and thwart Jafar’s evil plans? Will the Genie’s wish for freedom ever come true?',
-    moments: ['../']
+    moments: [
+      '../../assets/picture/aladdin-1.jpg',
+      '../../assets/picture/aladdin-2.jpg',
+      '../../assets/picture/aladdin-3.jpg'
+    ]
   },
   { id: 6, 
     name: 'Cats', 
     src: '../../assets/picture/cats.jpg',
     content: "Based on T.S. Eliot's Old Possum's Book of Practical Cats, Andrew Lloyd Webber's classic musical tells the story of the Jellicle cats and each cat's individual quest to be selected as the lucky one who will ascend to 'the Heaviside Layer.'",
-    moments: ['../']
+    moments: [
+      '../../assets/picture/cats-1.jpg',
+      '../../assets/picture/cats-2.jpg',
+      '../../assets/picture/cats-3.jpg'
+    ]
   }
 ];
