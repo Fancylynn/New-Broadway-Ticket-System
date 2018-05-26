@@ -12,6 +12,7 @@ import { ShowService } from './services/show.service';
 
 import { MaterialModule } from './shared/material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,10 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  entryComponents: [ ShowDetailComponent ],
+  entryComponents: [ ShowDetailComponent, TicketOrderComponent ],
   providers: [ShowService],
   bootstrap: [AppComponent]
 })

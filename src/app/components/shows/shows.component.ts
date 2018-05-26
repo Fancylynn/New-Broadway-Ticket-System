@@ -23,6 +23,7 @@ export class ShowsComponent implements OnInit {
 
   getShows(): void {
     this.shows = this.showService.getShows();
+    this.hoverShow = this.shows.length > 0 ? this.shows[0] : null;
   }
 
   onHover(show: Show): void {
