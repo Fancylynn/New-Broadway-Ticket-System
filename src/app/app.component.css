@@ -1,8 +1,23 @@
+
+.login-container {
+    margin-top: -50px;
+    float: right;
+}
+
+.login-container a {
+    font-family: Arial;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-right: 20px;
+    color:aliceblue;
+}
+
 h1 {
     font-family: fantasy;
     text-align: center;
     font-size: 80px;
     color: white;
+    margin-top: 100px;
 }
 
 a:link {
@@ -18,7 +33,7 @@ a:hover {
     text-decoration: underline;
 }
 
-a {
+.main-tab-container a {
     font-family: Arial;
     font-size: 30px;
     margin-left: 50px;
