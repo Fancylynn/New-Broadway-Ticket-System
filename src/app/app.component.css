@@ -6,11 +6,21 @@
 
 .login-container a {
     font-family: Arial;
+    font-weight: bold;
     font-size: 20px;
     margin-left: 20px;
     margin-right: 20px;
     color:aliceblue;
+    cursor: pointer;
+    text-decoration: none;
+    width: 50px;
 }
+
+.login-container a:hover {
+    color: #ccc;
+}
+
+
 
 h1 {
     font-family: fantasy;
