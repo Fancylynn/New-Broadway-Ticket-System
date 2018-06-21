@@ -25,10 +25,11 @@ export class LoginComponent implements OnInit {
     return this.af.auth.signInWithEmailAndPassword(this.email, this.password)
             .then(() => {
               console.log("successfully log in");
+              console.log(this.af.authState);
             })
             .catch((error) => {
               console.log(error);
-              console.log("fail to log in");
+              alert(error.message);
             })
   }
 

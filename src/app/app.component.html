@@ -1,8 +1,20 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
   <nav class="login-container">
-    <a (click)="openLoginBox()">User Login</a>
-    <a (click)="openSignUpBox()">Sign Up</a>
+    <!--<a (click)="openLoginBox()">User Login</a>
+    <a (click)="openSignUpBox()">Sign Up</a>-->
+    
+    <a [matMenuTriggerFor]="menu">
+      Hello, sign in
+    </a>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false">
+      <button mat-menu-item>
+        <span class="drop-down-link" (click)="openLoginBox()">User Login</span>
+      </button>
+      <button mat-menu-item>
+        <span class="drop-down-link" (click)="openSignUpBox()">Sign Up</span>
+      </button>
+    </mat-menu>
   </nav>
   <h1>BROADWAY MUSICAL</h1>
   <nav class="main-tab-container">

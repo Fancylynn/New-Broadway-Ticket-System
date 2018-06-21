@@ -2,6 +2,7 @@
 .login-container {
     margin-top: -50px;
     float: right;
+    margin-right: 2%;
 }
 
 .login-container a {
@@ -13,14 +14,11 @@
     color:aliceblue;
     cursor: pointer;
     text-decoration: none;
-    width: 50px;
 }
 
 .login-container a:hover {
     color: #ccc;
 }
-
-
 
 h1 {
     font-family: fantasy;
@@ -49,4 +47,13 @@ a:hover {
     margin-left: 50px;
     margin-right: 50px;
     color:aliceblue;
+}
+
+.mat-menu-panel {
+    min-width: 125px !important;
+}
+
+.drop-down-link {
+    font-size: 20px;
+    text-decoration: none;
 }

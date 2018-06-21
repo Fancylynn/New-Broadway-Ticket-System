@@ -27,9 +27,11 @@ export class SignUpComponent implements OnInit {
               })
               .catch((error) => {
                 console.log(error);
+                alert(error.message);
                 console.log("fail to create new user");
               })
     } else {
+      alert("inconsisitent password");
       console.log("inconsisitent password");
     }
   }
