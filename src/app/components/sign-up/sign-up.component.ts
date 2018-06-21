@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Component({
   selector: 'app-sign-up',
@@ -7,9 +8,30 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignUpComponent implements OnInit {
 
-  constructor() { }
+  constructor(public af: AngularFireAuth) { }
+
+  username = '';
+  email = '';
+  password = '';
+  confirmPassword = '';
 
   ngOnInit() {
+  }
+
+  onClickSignup() {
+    if (this.password === this.confirmPassword) {
+      return this.af.auth.createUserWithEmailAndPassword(this.email, this.password)
+              .then((user) => {
+                console.log(user);
+                console.log("new user created");
+              })
+              .catch((error) => {
+                console.log(error);
+                console.log("fail to create new user");
+              })
+    } else {
+      console.log("inconsisitent password");
+    }
   }
 
 }

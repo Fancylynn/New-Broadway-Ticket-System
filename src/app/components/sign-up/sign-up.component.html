@@ -2,18 +2,18 @@
     <h1> Nice to have you joining us! </h1>
     <form>
         <mat-form-field class="input-container">
-            <input matInput placeholder="Username">
+            <input matInput placeholder="Username" [(ngModel)]="username" name="username">
         </mat-form-field>
         <mat-form-field class="input-container">
-            <input matInput placeholder="Email">
+            <input matInput placeholder="Email" [(ngModel)]="email" name="email">
         </mat-form-field>
         <mat-form-field class="input-container">
-            <input matInput placeholder="Password">
+            <input matInput placeholder="Password" [(ngModel)]="password" name="password">
         </mat-form-field>
         <mat-form-field class="input-container">
-            <input matInput placeholder="Confirm Password">
+            <input matInput placeholder="Confirm Password" [(ngModel)]="confirmPassword" name="confirmPassword">
         </mat-form-field>
         
-        <button mat-raised-button>Sign Up</button>
+        <button mat-raised-button type="button" (click)="onClickSignup()">Sign Up</button>
     </form>
 </div>
