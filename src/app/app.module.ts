@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 
 import { AppComponent } from './app.component';
@@ -13,6 +14,23 @@ import { ShowService } from './services/show.service';
 import { MaterialModule } from './shared/material.module';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
+
+import { AngularFireModule } from 'angularfire2';
+
+// New imports to update based on AngularFire2 version 4
+import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { AngularFireAuthModule } from 'angularfire2/auth';
+import { AngularFireAuth } from 'angularfire2/auth';
+import * as firebaseconfig from './firebase-config';
+
+export const firebaseConfig = {
+  apiKey: firebaseconfig.FIREBASE_API_KEY,
+  authDomain: firebaseconfig.FIREBASE_AUTH_DOMAIN,
+  databaseURL: firebaseconfig.FIREBASE_DATABASE_URL,
+  projectId: firebaseconfig.FIREBASE_PROJECT_ID,
+  storageBucket: firebaseconfig.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: firebaseconfig.FIREBASE_MESSAGING_SENDER_ID
+};
 
 @NgModule({
   declarations: [
@@ -28,9 +46,13 @@ import { SignUpComponent } from './components/sign-up/sign-up.component';
     AppRoutingModule,
     MaterialModule,
     BrowserAnimationsModule,
+    FormsModule,
+    AngularFireModule.initializeApp(firebaseConfig),
+    AngularFireDatabaseModule,
+    AngularFireAuthModule
   ],
   entryComponents: [ ShowDetailComponent, LoginComponent, SignUpComponent ],
-  providers: [ShowService],
+  providers: [ShowService, AngularFireAuth],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,13 +2,13 @@
     <h1> Welcome Back! </h1>
     <form>
         <mat-form-field class="input-container">
-            <input matInput placeholder="Username">
+            <input matInput placeholder="Username" [(ngModel)]="email" name="email">
         </mat-form-field>
         <mat-form-field class="input-container">
-            <input matInput placeholder="Password">
+            <input matInput placeholder="Password" [(ngModel)]="password" name="password">
         </mat-form-field>
         
-        <button mat-raised-button>Login</button>
+        <button mat-raised-button type="button" (click)="onClickLogin()">Login</button>
     </form>
 </div>
 

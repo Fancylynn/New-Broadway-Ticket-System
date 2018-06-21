@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+// import { AngularFireDatabase} from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
+// import { Observable } from 'rxjs/Observable';
+import * as firebase from 'firebase/app';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +11,27 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor(public af: AngularFireAuth) { }
+  
+  email = '';
+  password = '';
 
   ngOnInit() {
   }
+
+  onClickLogin() {
+    console.log(this.email);
+    console.log(this.password);
+    return this.af.auth.signInWithEmailAndPassword(this.email, this.password)
+            .then(() => {
+              console.log("successfully log in");
+            })
+            .catch((error) => {
+              console.log(error);
+              console.log("fail to log in");
+            })
+  }
+
+
 
 }
