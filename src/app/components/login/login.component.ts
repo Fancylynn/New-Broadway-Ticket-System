@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-// import { AngularFireDatabase} from 'angularfire2/database';
 import { AngularFireAuth } from 'angularfire2/auth';
-// import { Observable } from 'rxjs/Observable';
 import * as firebase from 'firebase/app';
+
+import {MatDialogRef, MatSnackBar} from '@angular/material';
+
 
 @Component({
   selector: 'app-login',
@@ -11,21 +12,22 @@ import * as firebase from 'firebase/app';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public af: AngularFireAuth) { }
+  constructor(public af: AngularFireAuth, public dialogRef: MatDialogRef<LoginComponent>, public snackBar: MatSnackBar) { }
   
-  email = '';
-  password = '';
+  email = 'test4@nyu.edu';
+  password = 'test123';
 
   ngOnInit() {
   }
 
   onClickLogin() {
-    console.log(this.email);
-    console.log(this.password);
     return this.af.auth.signInWithEmailAndPassword(this.email, this.password)
-            .then(() => {
+            .then(({user}) => {
+              console.log(user);
               console.log("successfully log in");
               console.log(this.af.authState);
+              this.dialogRef.close();
+              this.openSnackBar("Welcome", user.displayName)
             })
             .catch((error) => {
               console.log(error);
@@ -33,6 +35,10 @@ export class LoginComponent implements OnInit {
             })
   }
 
-
+  openSnackBar(message: string, action: string) {
+    this.snackBar.open(message, action, {
+      duration: 2000,
+    });
+  }
 
 }

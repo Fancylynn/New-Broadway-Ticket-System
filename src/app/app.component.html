@@ -1,9 +1,6 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <div>
-  <nav class="login-container">
-    <!--<a (click)="openLoginBox()">User Login</a>
-    <a (click)="openSignUpBox()">Sign Up</a>-->
-    
+  <nav [style.visibility]="isLoggedIn ? 'hidden' : 'visible'" class="login-container">
     <a [matMenuTriggerFor]="menu">
       Hello, sign in
     </a>
@@ -13,6 +10,19 @@
       </button>
       <button mat-menu-item>
         <span class="drop-down-link" (click)="openSignUpBox()">Sign Up</span>
+      </button>
+    </mat-menu>
+  </nav>
+  <nav [style.visibility]="isLoggedIn ? 'visible' : 'hidden'" class="login-container">
+    <a [matMenuTriggerFor]="menu1">
+      Hello, {{username}}
+    </a>
+    <mat-menu #menu1="matMenu" [overlapTrigger]="false">
+      <button mat-menu-item>
+        <span class="drop-down-link">User Profile</span>
+      </button>
+      <button mat-menu-item>
+        <span class="drop-down-link" (click)="onUserLogout()">Log out</span>
       </button>
     </mat-menu>
   </nav>
