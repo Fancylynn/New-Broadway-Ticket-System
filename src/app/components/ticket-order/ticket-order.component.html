@@ -26,20 +26,16 @@
             <hr>
             <label class="input-label">Available Shows</label>
             <select name="drama" size="1">
-                <option value="phantom">Phantom of the Opera</option>
-                <option value="wicked">Wicked</option>
-                <option value="lion_king">The Lion King</option>
-                <option value="book_of_mormon">The Book of Mormon</option>
-                <option value="aladdin">Aladdin </option>
+                <option *ngFor="let show of shows">{{show.name}}</option>
             </select>
             <br>
             <br>
             
             <label class="input-label">Available Time</label>
             <select name="time" size="1">
-                <option value="Friday">Friday - 12/30/16 - 7:00 pm</option>
-                <option value="Saturday">Saturday - 12/31/16 - 7:00 pm</option>
-                <option value="Sunday">Sunday - 1/1/17 - 7:00 pm</option>
+                <option value="Friday">Friday - 12/30/18 - 7:00 pm</option>
+                <option value="Saturday">Saturday - 12/31/18 - 7:00 pm</option>
+                <option value="Sunday">Sunday - 1/1/19 - 7:00 pm</option>
             </select>
             <br>
             <br>
