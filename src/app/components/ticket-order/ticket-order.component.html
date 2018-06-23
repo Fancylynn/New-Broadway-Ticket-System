@@ -4,44 +4,44 @@
             <h3>Contact Information</h3>
             <hr>
             <label class="input-label">Name</label>
-            <input type="text" name="name" size="30" required>
+            <input type="text" name="orderName" size="30" [(ngModel)]="currentOrder.orderName" required>
             <br>
             <br>
             
             <label class="input-label">Phone Number</label>
-            <input type="tel" name="phone" required>
+            <input type="tel" name="phone" [(ngModel)]="currentOrder.phoneNumber" required>
             <br>
             <br>
             
             <label class="input-label">Email Address</label>
-            <input type="email" name="email"required>
+            <input type="email" name="email" [(ngModel)]="currentOrder.email" required>
             <br>
             <br>
             
             <label class="input-label">Home Address</label>
-            <textarea name="address" cols="50" rows="3" placeholder="Please specify your apt or room number" required></textarea>
+            <textarea name="address" cols="50" rows="3" placeholder="Please specify your apt or room number" [(ngModel)]="currentOrder.homeAddress" required></textarea>
             <br>
             
             <h3>Ticket Information</h3>
             <hr>
             <label class="input-label">Available Shows</label>
-            <select name="drama" size="1">
-                <option *ngFor="let show of shows">{{show.name}}</option>
+            <select name="drama" size="1" [(ngModel)]="currentOrder.showName">
+                <option *ngFor="let show of shows" >{{show.name}}</option>
             </select>
             <br>
             <br>
             
             <label class="input-label">Available Time</label>
-            <select name="time" size="1">
-                <option value="Friday">Friday - 12/30/18 - 7:00 pm</option>
-                <option value="Saturday">Saturday - 12/31/18 - 7:00 pm</option>
-                <option value="Sunday">Sunday - 1/1/19 - 7:00 pm</option>
+            <select name="time" size="1" [(ngModel)]="currentOrder.showTime"> 
+                <option value="Friday - 12/30/18 - 7:00 pm">Friday - 12/30/18 - 7:00 pm</option>
+                <option value="Saturday - 12/31/18 - 7:00 pm">Saturday - 12/31/18 - 7:00 pm</option>
+                <option value="Sunday - 1/1/19 - 7:00 pm">Sunday - 1/1/19 - 7:00 pm</option>
             </select>
             <br>
             <br>
             
             <label class="input-label">Ticket Quantity</label>
-            <select name="quantity" size="1">
+            <select name="quantity" size="1" [(ngModel)]="currentOrder.quantity">
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -53,21 +53,21 @@
             <br>
             
             <label class="input-label">Delivery Mode</label>
-            <input type="radio" name="delivery_mode" value="in_store"><label class="input-label">In Store Pickup</label>
-            <input type="radio" name="delivery_mode" value="home"><label class="input-label">Mail to Home Address</label>
-            <input type="radio" name="delivery_mode" value="email"><label class="input-label">Email</label>
+            <input type="radio" name="delivery_mode" value="in_store" [(ngModel)]="currentOrder.delivery"><label class="input-label">In Store Pickup</label>
+            <input type="radio" name="delivery_mode" value="home" [(ngModel)]="currentOrder.delivery"><label class="input-label">Mail to Home Address</label>
+            <input type="radio" name="delivery_mode" value="email" [(ngModel)]="currentOrder.delivery"><label class="input-label">Email</label>
             <br>
             <br>
             
             <label class="input-label">Payment Method</label>
-            <input type="radio" name="payment" value="debit"><label class="input-label">Debit Card</label>
-            <input type="radio" name="payment" value="credit"><label class="input-label">Credit Card</label>
-            <input type="radio" name="payment" value="cash"><label class="input-label">Cash</label>
+            <input type="radio" name="payment" value="debit" [(ngModel)]="currentOrder.payment"><label class="input-label">Debit Card</label>
+            <input type="radio" name="payment" value="credit" [(ngModel)]="currentOrder.payment"><label class="input-label">Credit Card</label>
+            <input type="radio" name="payment" value="cash" [(ngModel)]="currentOrder.payment"><label class="input-label">Cash</label>
             <br>
             <br>
             
             <div id="order">
-                <input class="button" id="submit" type="submit" value="Order">
+                <input class="button" id="submit" type="submit" value="Order" (click)="onSubmitOrder()">
                 <input class="button" id="cancel" type="reset"  value="Cancel">
             </div> 
         </fieldset>
