@@ -18,3 +18,24 @@ h3 {
 .input-label {
     color: white;
 }
+
+.order-placed {
+    color: white;
+    font-size: 30px;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.back-button {
+    color: white;
+    width: 30%;
+    height: 20%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.back-button span {
+    color: black;
+    font-size: 30px;
+}

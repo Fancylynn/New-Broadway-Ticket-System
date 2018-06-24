@@ -19,6 +19,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import * as firebaseconfig from './firebase-config';
+import { AngularFireDatabase } from 'angularfire2/database';
 
 export const firebaseConfig = {
   apiKey: firebaseconfig.FIREBASE_API_KEY,
@@ -48,7 +49,10 @@ export const firebaseConfig = {
     AngularFireDatabaseModule,
     AngularFireAuthModule
   ],
-  entryComponents: [ ShowDetailComponent, LoginComponent, SignUpComponent ],
+  entryComponents: [
+    ShowDetailComponent, 
+    LoginComponent, 
+    SignUpComponent ],
   providers: [ShowService, AngularFireAuth, AngularFirestore],
   bootstrap: [AppComponent]
 })

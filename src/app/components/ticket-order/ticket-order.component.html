@@ -1,5 +1,5 @@
 <div class="ticket-order-container">
-    <form>
+    <form *ngIf="!isOrderSubmitted">
         <fieldset class="form-fieldset">
             <h3>Contact Information</h3>
             <hr>
@@ -72,4 +72,12 @@
             </div> 
         </fieldset>
     </form>
+    <div *ngIf="isOrderSubmitted">
+        <p class="order-placed">
+            Congratulations! Your order has been successfully placed. The confirmation letter will be sent to your email address soon!
+        </p>
+        <button class="back-button" (click)="onClickBackToOrder()">
+            <span>Back To Order Page</span>
+        </button>
+    </div>
 </div>

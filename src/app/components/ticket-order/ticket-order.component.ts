@@ -8,6 +8,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 import { MatDialog } from '@angular/material';
 import { LoginComponent } from '../login/login.component';
+import { AngularFireDatabase }from 'angularfire2/database';
 
 @Component({
   selector: 'app-ticket-order',
@@ -19,8 +20,9 @@ export class TicketOrderComponent implements OnInit {
   constructor(private showService: ShowService, 
               public af: AngularFireAuth,
               private afs: AngularFirestore,
-              public dialog: MatDialog) { }
-
+              public dialog: MatDialog,
+              private db: AngularFireDatabase) { }
+  // parameters
   shows: Show[];
   currentOrder: Order = {
     userid: '',
@@ -34,6 +36,7 @@ export class TicketOrderComponent implements OnInit {
     delivery: '',
     payment: ''
   };
+  isOrderSubmitted: boolean = false;
 
 
   ngOnInit() {
@@ -49,15 +52,27 @@ export class TicketOrderComponent implements OnInit {
     this.shows = this.showService.getShows();
   }
 
-  onSubmitOrder() {
+  onSubmitOrder(): void {
     console.log(this.currentOrder);
-    if (this.currentOrder.userid.length > 0) {
-      this.afs.collection('order').add(this.currentOrder);
+    const user = this.af.auth.currentUser;
+    console.log(user);
+    if (user) {
+      // this.afs.collection('order').add(this.currentOrder);
+      this.db.list(`order/${user.uid}`).push(this.currentOrder)
+        .then((res) => {
+          console.log(res);
+          this.isOrderSubmitted = true;
+        });
     } else {
       const dialogRef = this.dialog.open(LoginComponent, 
       {
         width: '500px'
       });
     }
+  }
+
+  onClickBackToOrder(): void {
+    this.isOrderSubmitted = false;
+    this.currentOrder = new Order;
   }
 }
