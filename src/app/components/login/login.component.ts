@@ -14,8 +14,11 @@ export class LoginComponent implements OnInit {
 
   constructor(public af: AngularFireAuth, public dialogRef: MatDialogRef<LoginComponent>, public snackBar: MatSnackBar) { }
   
-  email = 'test4@nyu.edu';
-  password = 'test123';
+  // email = 'test4@nyu.edu';
+  // password = 'test123';
+
+  email = '';
+  password = '';
 
   ngOnInit() {
   }
@@ -23,14 +26,14 @@ export class LoginComponent implements OnInit {
   onClickLogin() {
     return this.af.auth.signInWithEmailAndPassword(this.email, this.password)
             .then(({user}) => {
-              console.log(user);
-              console.log("successfully log in");
-              console.log(this.af.authState);
+              // console.log(user);
+              // console.log("successfully log in");
+              // console.log(this.af.authState);
               this.dialogRef.close();
               this.openSnackBar("Welcome", user.displayName)
             })
             .catch((error) => {
-              console.log(error);
+              // console.log(error);
               alert(error.message);
             })
   }

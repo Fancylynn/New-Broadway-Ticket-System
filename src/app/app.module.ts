@@ -20,6 +20,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from 'angularfire2/firestore';
 import * as firebaseconfig from './firebase-config';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { OrderHistoryComponent } from './components/order-history/order-history.component';
 
 export const firebaseConfig = {
   apiKey: firebaseconfig.FIREBASE_API_KEY,
@@ -38,6 +39,7 @@ export const firebaseConfig = {
     TicketOrderComponent,
     LoginComponent,
     SignUpComponent,
+    OrderHistoryComponent,
   ],
   imports: [
     BrowserModule,

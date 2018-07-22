@@ -1,0 +1,22 @@
+<table>
+  <tr>
+    <th>Order Name</th>
+    <th>Email</th>
+    <th>Show Name</th>
+    <th>Show Time</th>
+    <th>Quantity</th>
+    <th>Delivery</th>
+    <th>Home Address</th>
+    <th>Payment</th>
+  </tr>
+  <tr *ngFor="let order of orders | async">
+    <td>{{order.orderName}}</td>
+    <td>{{order.email}}</td>
+    <td>{{order.showName}}</td>
+    <td>{{order.showTime}}</td>
+    <td>{{order.quantity}}</td>
+    <td>{{order.delivery}}</td>
+    <td>{{order.homeAddress}}</td>
+    <td>{{order.payment}}</td>
+  </tr>
+</table>
