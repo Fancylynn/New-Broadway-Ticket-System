@@ -4,6 +4,8 @@ import { FirebaseListObservable } from 'angularfire2/database-deprecated';
 import { Observable } from 'rxjs/Observable';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { Order } from '../../models/order';
+import { MatDialog } from '@angular/material';
+import { LoginComponent } from '../login/login.component';
 
 @Component({
   selector: 'app-order-history',
@@ -12,27 +14,42 @@ import { Order } from '../../models/order';
 })
 export class OrderHistoryComponent implements OnInit {
   // states
-  orders: Observable<any[]>;
+  orders: any[];
   currentUser: string;
-  isLoading: true;
+  isLoading: boolean = true;
+  isOrderEmpty: boolean = false;
+  isLoggedIn: boolean = false;
 
-  constructor(public af: AngularFireAuth, private db: AngularFireDatabase) { }
+  constructor(public af: AngularFireAuth,
+              private db: AngularFireDatabase,
+              public dialog: MatDialog) {
+               }
 
   async ngOnInit() {
-    await this.delay(2000);
-    const user = this.af.auth.currentUser;
-    // console.log(user.uid);
-    this.currentUser = user.uid;
-    // const uid = this.getCurrentId();
-    this.orders = this.db.list(`order/${this.currentUser}`).valueChanges();
-    this.orders.subscribe(res => console.log(res));
-    console.log(this.orders);
+    this.af.auth.onAuthStateChanged((user) => {
+      if (user) {
+        this.isLoggedIn = true;
+        this.currentUser = user.uid;
+        this.db.list(`order/${this.currentUser}`).valueChanges().subscribe(res => {
+          this.isLoading = false;
+          this.orders = res;
+          if (this.orders.length == 0) {
+            this.isOrderEmpty = true;
+          } else {
+            this.isOrderEmpty = false;
+          }
+        });
+      } else {
+        this.isLoggedIn = false;
+      }
+    })
   }
 
-  private delay(ms: number): Promise<void> {
-    return new Promise<void>(resolve => {
-      setTimeout(resolve, ms);
-    })
+  onOpenLogin() {
+    const dialogRef = this.dialog.open(LoginComponent, 
+      {
+        width: '500px'
+    });
   }
 
 }

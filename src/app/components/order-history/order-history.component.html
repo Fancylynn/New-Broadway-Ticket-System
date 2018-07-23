@@ -1,4 +1,4 @@
-<table>
+<table *ngIf="isLoggedIn">
   <tr>
     <th>Order Name</th>
     <th>Email</th>
@@ -9,7 +9,7 @@
     <th>Home Address</th>
     <th>Payment</th>
   </tr>
-  <tr *ngFor="let order of orders | async">
+  <tr *ngFor="let order of orders">
     <td>{{order.orderName}}</td>
     <td>{{order.email}}</td>
     <td>{{order.showName}}</td>
@@ -20,3 +20,11 @@
     <td>{{order.payment}}</td>
   </tr>
 </table>
+
+<div *ngIf="!isLoggedIn">
+  <p class="warning-info"> Please 
+    <span (click)="onOpenLogin()" class="log-in">Login</span>
+    <img src="../../assets/picture/cursor.png" alt="click" /> 
+    First to View your Order History!! 
+  </p>
+</div>

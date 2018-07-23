@@ -12,7 +12,8 @@ import {MatDialogRef, MatSnackBar} from '@angular/material';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(public af: AngularFireAuth, public dialogRef: MatDialogRef<LoginComponent>, public snackBar: MatSnackBar) { }
+  constructor(public af: AngularFireAuth, public dialogRef: MatDialogRef<LoginComponent>, public snackBar: MatSnackBar) {
+   }
   
   // email = 'test4@nyu.edu';
   // password = 'test123';
