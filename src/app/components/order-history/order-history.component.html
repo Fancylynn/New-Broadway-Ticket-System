@@ -21,6 +21,10 @@
   </tr>
 </table>
 
+<div *ngIf="isLoading">
+  <p>Loading...</p>
+</div>
+
 <div *ngIf="!isLoggedIn">
   <p class="warning-info"> Please 
     <span (click)="onOpenLogin()" class="log-in">Login</span>
