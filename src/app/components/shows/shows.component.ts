@@ -13,7 +13,7 @@ export class ShowsComponent implements OnInit {
 
   constructor(private showService: ShowService, public dialog: MatDialog) { }
 
-  shows: Show[];
+  shows: Show[] = [];
 
   hoverShow: Show;
 
@@ -22,7 +22,15 @@ export class ShowsComponent implements OnInit {
   }
 
   getShows(): void {
-    this.shows = this.showService.getShows();
+    this.showService.getShows().subscribe(
+      data => {
+        data.forEach(element => {
+          console.log(element);
+          console.log(typeof element);
+          this.shows.push(element);
+        });
+      }
+    );
     this.hoverShow = this.shows.length > 0 ? this.shows[0] : null;
   }
 
