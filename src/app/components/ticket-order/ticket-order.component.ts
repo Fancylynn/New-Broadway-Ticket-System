@@ -49,7 +49,16 @@ export class TicketOrderComponent implements OnInit {
   }
 
   getShows(): void {
-    this.shows = this.showService.getShows();
+    this.showService.getShows().subscribe(
+      data => {
+        data.forEach(element => {
+          console.log(element);
+          console.log(typeof element);
+          this.shows.push(element);
+        });
+      },
+      err => console.error('Observer got an error: ' + err)
+    );
   }
 
   onSubmitOrder(): void {
