@@ -23,7 +23,7 @@ export class TicketOrderComponent implements OnInit {
               public dialog: MatDialog,
               private db: AngularFireDatabase) { }
   // parameters
-  shows: Show[];
+  shows: Show[] = [];
   currentOrder: Order = {
     userid: '',
     orderName: '',

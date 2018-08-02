@@ -10,9 +10,9 @@ export class ShowService {
   constructor(private db: AngularFireDatabase) {
   }
 
-  shows: Observable<any>;
+  shows: Observable<Show[]>;
 
-  getShows(): Observable<any> {
+  getShows(): Observable<Show[]> {
     const response = (this.db.list('show/data')
                      .valueChanges() as Observable<Show[]>);
                     //  .subscribe(

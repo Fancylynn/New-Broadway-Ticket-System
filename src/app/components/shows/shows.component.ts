@@ -29,7 +29,8 @@ export class ShowsComponent implements OnInit {
           console.log(typeof element);
           this.shows.push(element);
         });
-      }
+      },
+      err => console.error('Observer got an error: ' + err)
     );
     this.hoverShow = this.shows.length > 0 ? this.shows[0] : null;
   }
