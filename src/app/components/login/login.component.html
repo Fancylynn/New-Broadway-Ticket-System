@@ -5,10 +5,12 @@
             <input matInput placeholder="Username" [(ngModel)]="email" name="email">
         </mat-form-field>
         <mat-form-field class="input-container">
-            <input matInput placeholder="Password" [(ngModel)]="password" name="password">
+            <input matInput placeholder="Password" [type]="pwdHidden ? 'password' : 'text'" [(ngModel)]="password" name="password">
+            <mat-icon class="hidden-icon" matSuffix (click)="pwdHidden = !pwdHidden">{{pwdHidden ? 'visibility' : 'visibility_off'}}</mat-icon>
         </mat-form-field>
         
         <button mat-raised-button (click)="onClickLogin()" type="submit">Login</button>
     </form>
 </div>
 
+ 

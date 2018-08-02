@@ -20,8 +20,10 @@ export class LoginComponent implements OnInit {
 
   email = '';
   password = '';
+  pwdHidden = true;
 
   ngOnInit() {
+    this.pwdHidden = true;
   }
 
   onClickLogin() {

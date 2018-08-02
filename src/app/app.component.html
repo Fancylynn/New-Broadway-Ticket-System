@@ -5,11 +5,11 @@
       Hello, sign in
     </a>
     <mat-menu #menu="matMenu" [overlapTrigger]="false">
-      <button mat-menu-item>
-        <span class="drop-down-link" (click)="openLoginBox()">User Login</span>
+      <button mat-menu-item (click)="openLoginBox()">
+        <span class="drop-down-link" >User Login</span>
       </button>
-      <button mat-menu-item>
-        <span class="drop-down-link" (click)="openSignUpBox()">Sign Up</span>
+      <button mat-menu-item (click)="openSignUpBox()">
+        <span class="drop-down-link" >Sign Up</span>
       </button>
     </mat-menu>
   </nav>
@@ -24,8 +24,8 @@
       <button mat-menu-item>
         <a class="drop-down-link" routerLink = "/orderHistory">Order History</a>
       </button>
-      <button mat-menu-item>
-        <span class="drop-down-link" (click)="onUserLogout()">Log out</span>
+      <button mat-menu-item (click)="onUserLogout()">
+        <span class="drop-down-link" >Log out</span>
       </button>
     </mat-menu>
   </nav>

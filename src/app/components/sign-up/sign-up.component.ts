@@ -15,8 +15,10 @@ export class SignUpComponent implements OnInit {
   email = '';
   password = '';
   confirmPassword = '';
+  pwdHidden = true;
 
   ngOnInit() {
+    this.pwdHidden = true;
   }
 
   onClickSignup() {
